@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Richmond Hill Walk-In Clinic | No Appointment Needed | Open 7 Days</title>
+  <meta name="description" content="Richmond Hill Walk-In Clinic at 301 High Tech Rd, Bayview & Hwy 7. Open 7 days a week — no appointment needed. Serving Richmond Hill, Thornhill, and Markham.">
+  <meta name="keywords" content="walk-in clinic Richmond Hill, Richmond Hill doctor, no appointment clinic, urgent care Richmond Hill, Bayview Highway 7 clinic, OHIP clinic Richmond Hill">
+  <meta property="og:title" content="Richmond Hill Walk-In Clinic | No Appointment Needed | Open 7 Days">
+  <meta property="og:description" content="Richmond Hill Walk-In Clinic at 301 High Tech Rd, Bayview & Hwy 7. Open 7 days a week — no appointment needed. Serving Richmond Hill, Thornhill, and Markham.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://richmondhillwalkin.ca">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "Richmond Hill Walk-In Clinic",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "301 High Tech Rd",
+      "addressLocality": "Richmond Hill",
+      "addressRegion": "ON",
+      "postalCode": "L4B 4R2",
+      "addressCountry": "CA"
+    },
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"21:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday"],"opens":"10:00","closes":"17:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"12:00","closes":"17:00"}
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── CSS Variables ── */
+    :root {
+      --forest:   #2C4A35;
+      --forest-d: #1e3325;
+      --sage:     #7A9E7E;
+      --sage-lt:  #a8c4ab;
+      --stone:    #C4B49A;
+      --cream:    #F7F4EF;
+      --white:    #FFFFFF;
+      --ink:      #1C2B1F;
+      --muted:    #6B7D6E;
+      --border:   #D8D0C4;
+    }
+
+    /* ── Reset & Base ── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── Animations ── */
+    @keyframes riseUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes chevronFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(5px); }
+    }
+
+    /* ── Reveal on scroll ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+
+    /* ── Eyebrow label ── */
+    .eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-lt);
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    /* ════════════════════════════════
+       1. FIXED NAV
+    ════════════════════════════════ */
+    #site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(24px, 5vw, 60px);
+      height: 72px;
+      background: transparent;
+      transition: background 0.45s ease, box-shadow 0.45s ease;
+    }
+
+    #site-header.scrolled {
+      background: rgba(247, 244, 239, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(44, 74, 53, 0.08);
+    }
+
+    .nav-logo {
+      height: 44px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+      transition: filter 0.5s ease;
+    }
+
+    #site-header.scrolled .nav-logo {
+      filter: brightness(0) saturate(100%) invert(22%) sepia(30%) saturate(800%) hue-rotate(90deg) brightness(80%);
+    }
+
+    nav {
+      display: flex;
+      gap: clamp(24px, 4vw, 48px);
+      align-items: center;
+    }
+
+    nav a {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.4s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    #site-header.scrolled nav a {
+      color: var(--muted);
+    }
+
+    /* ════════════════════════════════
+       2. HERO
+    ════════════════════════════════ */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* LEFT PANEL */
+    .hero-left {
+      background: var(--forest);
+      padding: clamp(100px, 12vw, 160px) clamp(40px, 6vw, 80px) clamp(80px, 10vw, 120px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-lt);
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: riseUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    }
+
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 32px;
+    }
+
+    .hero-h1 .line {
+      display: block;
+      opacity: 0;
+      animation: riseUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .hero-h1 .line-1 { animation-delay: 0.2s; }
+    .hero-h1 .line-2 { animation-delay: 0.37s; }
+    .hero-h1 .line-3 { animation-delay: 0.54s; }
+
+    .hero-h1 .sage-italic {
+      color: var(--sage-lt);
+      font-style: italic;
+    }
+    .hero-h1 .italic-only {
+      font-style: italic;
+    }
+
+    .hero-subtext {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.75;
+      max-width: 440px;
+      margin-bottom: 56px;
+      opacity: 0;
+      animation: riseUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.72s forwards;
+    }
+
+    .scroll-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      opacity: 0;
+      animation: riseUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+    }
+
+    .scroll-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .scroll-chevron {
+      width: 18px;
+      height: 10px;
+      position: relative;
+      animation: chevronFloat 2s ease-in-out infinite;
+    }
+
+    .scroll-chevron::before,
+    .scroll-chevron::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 1.5px;
+      background: rgba(255, 255, 255, 0.35);
+      top: 50%;
+    }
+    .scroll-chevron::before {
+      left: 0;
+      transform: translateY(-50%) rotate(35deg);
+      transform-origin: left center;
+    }
+    .scroll-chevron::after {
+      right: 0;
+      transform: translateY(-50%) rotate(-35deg);
+      transform-origin: right center;
+    }
+
+    /* RIGHT PANEL */
+    .hero-right {
+      background: var(--stone);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(60px, 8vw, 100px) clamp(40px, 6vw, 80px);
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-logo {
+      width: min(580px, 92%);
+      height: auto;
+      display: block;
+    }
+
+    .hero-rule {
+      width: 40px;
+      height: 1px;
+      background: rgba(44, 74, 53, 0.2);
+      flex-shrink: 0;
+    }
+
+    .hero-tagline {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(44, 74, 53, 0.5);
+      text-align: center;
+    }
+
+    /* ════════════════════════════════
+       3. HOURS
+    ════════════════════════════════ */
+    #hours {
+      background: var(--forest);
+      padding: clamp(80px, 10vw, 130px) clamp(24px, 6vw, 80px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hours::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 60%;
+      height: 80%;
+      background: radial-gradient(ellipse at center, rgba(122, 158, 126, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hours-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: clamp(40px, 6vw, 100px);
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hours-left {}
+
+    .hours-left .eyebrow {
+      color: var(--sage-lt);
+    }
+
+    .hours-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .hours-lead {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .hours-note {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.6;
+    }
+
+    .hours-right {}
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hours-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .hours-table td {
+      padding: 16px 0;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
+
+    .hours-table .day-cell {
+      color: rgba(255, 255, 255, 0.55);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hours-table .time-cell {
+      color: rgba(255, 255, 255, 0.75);
+      text-align: right;
+    }
+
+    .hours-table tr.today .day-cell {
+      color: var(--sage-lt);
+      font-weight: 500;
+      padding-left: 16px;
+      border-left: 2px solid var(--sage);
+    }
+
+    .today-badge {
+      background: rgba(122, 158, 126, 0.2);
+      border: 1px solid rgba(122, 158, 126, 0.4);
+      border-radius: 100px;
+      font-size: 0.62rem;
+      padding: 2px 10px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--sage-lt);
+    }
+
+    /* ════════════════════════════════
+       4. LOCATION
+    ════════════════════════════════ */
+    #location {
+      background: var(--cream);
+      padding: clamp(80px, 10vw, 130px) clamp(24px, 6vw, 80px);
+      position: relative;
+    }
+
+    .location-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: clamp(48px, 7vw, 72px);
+    }
+
+    .section-header .eyebrow {
+      color: var(--sage);
+    }
+
+    .location-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      color: var(--ink);
+      line-height: 1.1;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: start;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 380px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 48px rgba(44, 74, 53, 0.08);
+      display: block;
+    }
+
+    .location-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .location-block {
+      padding: 28px 0;
+    }
+
+    .location-block:first-child {
+      padding-top: 0;
+    }
+
+    .location-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .location-block address {
+      font-style: normal;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    .location-block address .sub {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-top: 4px;
+      display: block;
+    }
+
+    .location-block p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .location-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--stone);
+    }
+
+    .location-pullquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      color: var(--muted);
+      line-height: 1.6;
+      border-left: 2px solid var(--stone);
+      padding-left: 20px;
+    }
+
+    /* ════════════════════════════════
+       5. PHOTO STRIP
+    ════════════════════════════════ */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 340px;
+    }
+
+    .photo-cell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-cell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-cell-left img {
+      object-position: center 40%;
+      filter: brightness(0.92) saturate(0.85);
+    }
+
+    .photo-cell-left::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(44, 74, 53, 0.3), transparent 60%);
+      pointer-events: none;
+    }
+
+    .photo-cell-right img {
+      object-position: center;
+      filter: brightness(0.88) saturate(0.8);
+    }
+
+    .photo-cell-right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 40%, rgba(44, 74, 53, 0.2));
+      pointer-events: none;
+    }
+
+    /* ════════════════════════════════
+       6. SERVICES
+    ════════════════════════════════ */
+    #services {
+      background: var(--white);
+      padding: clamp(80px, 10vw, 130px) clamp(24px, 6vw, 80px);
+    }
+
+    .services-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: clamp(40px, 6vw, 100px);
+      align-items: start;
+    }
+
+    .services-intro .eyebrow {
+      color: var(--sage);
+    }
+
+    .services-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .services-lead {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .service-item {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-item:nth-child(odd) {
+      padding-right: 32px;
+      border-right: 1px solid var(--border);
+    }
+
+    .service-item:nth-child(even) {
+      padding-left: 32px;
+    }
+
+    /* remove bottom border from last two items */
+    .service-item:nth-last-child(1),
+    .service-item:nth-last-child(2) {
+      border-bottom: none;
+    }
+
+    .service-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.25rem;
+      color: var(--forest);
+      margin-bottom: 8px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .service-item h3::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--sage);
+      transition: width 0.45s ease;
+    }
+
+    .service-item:hover h3::after {
+      width: 100%;
+    }
+
+    .service-item p {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ════════════════════════════════
+       7. FOOTER
+    ════════════════════════════════ */
+    footer {
+      background: var(--forest-d);
+      padding: clamp(60px, 8vw, 100px) clamp(24px, 6vw, 80px) 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: clamp(40px, 5vw, 80px);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: clamp(48px, 6vw, 80px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-logo-img {
+      height: 32px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+      opacity: 0.8;
+      margin-bottom: 16px;
+    }
+
+    .footer-tagline {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.35);
+      line-height: 1.7;
+      max-width: 260px;
+    }
+
+    .footer-col-label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sage-lt);
+      opacity: 0.7;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .footer-col-text {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.9;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .footer-bottom span {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      font-size: 0.74rem;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════ */
+    @media (max-width: 768px) {
+      /* Hero */
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-right {
+        display: none;
+      }
+      .hero-left {
+        min-height: 100vh;
+        justify-content: flex-end;
+      }
+
+      /* Hours */
+      .hours-inner {
+        grid-template-columns: 1fr;
+      }
+
+      /* Location */
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Photo strip */
+      .photo-strip {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .photo-cell {
+        height: 240px;
+      }
+
+      /* Services */
+      .services-inner {
+        grid-template-columns: 1fr;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .service-item:nth-child(odd) {
+        padding-right: 0;
+        border-right: none;
+      }
+      .service-item:nth-child(even) {
+        padding-left: 0;
+      }
+      .service-item:nth-last-child(2) {
+        border-bottom: 1px solid var(--border);
+      }
+      .service-item:last-child {
+        border-bottom: none;
+      }
+
+      /* Footer */
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      /* Nav */
+      nav {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── 1. FIXED NAV ── -->
+  <header id="site-header">
+    <a href="#" aria-label="Richmond Hill Walk-In Clinic Home">
+      <img src="logo.png" alt="Richmond Hill Walk-In Clinic" class="nav-logo">
+    </a>
+    <nav>
+      <a href="#hours">Hours</a>
+      <a href="#location">Location</a>
+      <a href="#services">Services</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── 2. HERO ── -->
+    <section class="hero" aria-label="Welcome">
+      <!-- Left panel -->
+      <div class="hero-left">
+        <span class="hero-eyebrow">Richmond Hill &middot; Open 7 Days</span>
+        <h1 class="hero-h1">
+          <span class="line line-1">Your neighbourhood</span>
+          <span class="line line-2">clinic, <em class="sage-italic">open</em></span>
+          <span class="line line-3 italic-only">every day.</span>
+        </h1>
+        <p class="hero-subtext">Walk in any day of the week &mdash; no appointment, no referral needed. Professional, compassionate care for every member of your family.</p>
+        <div class="scroll-indicator" aria-hidden="true">
+          <span class="scroll-label">Scroll to explore</span>
+          <div class="scroll-chevron"></div>
+        </div>
+      </div>
+
+      <!-- Right panel -->
+      <div class="hero-right" aria-hidden="true">
+        <img src="logo.png" alt="" class="hero-logo">
+        <div class="hero-rule"></div>
+        <span class="hero-tagline">Open 7 Days &middot; No Appointment Needed</span>
+      </div>
+    </section>
+
+    <!-- ── 3. HOURS ── -->
+    <section id="hours" aria-labelledby="hours-heading">
+      <div class="hours-inner">
+        <div class="hours-left reveal reveal-d1">
+          <span class="eyebrow">Clinic hours</span>
+          <h2 class="hours-h2" id="hours-heading">Open when<br><em>every day.</em></h2>
+          <p class="hours-lead">Seven days a week, including weekends. No appointment, no referral &mdash; just walk in.</p>
+          <p class="hours-note">Last patient accepted 30 minutes before closing.</p>
+        </div>
+        <div class="hours-right reveal reveal-d2">
+          <table class="hours-table" aria-label="Clinic hours">
+            <tbody>
+              <tr data-day="1">
+                <td class="day-cell">Monday</td>
+                <td class="time-cell">9:00 a.m. &ndash; 9:00 p.m.</td>
+              </tr>
+              <tr data-day="2">
+                <td class="day-cell">Tuesday</td>
+                <td class="time-cell">9:00 a.m. &ndash; 9:00 p.m.</td>
+              </tr>
+              <tr data-day="3">
+                <td class="day-cell">Wednesday</td>
+                <td class="time-cell">9:00 a.m. &ndash; 9:00 p.m.</td>
+              </tr>
+              <tr data-day="4">
+                <td class="day-cell">Thursday</td>
+                <td class="time-cell">9:00 a.m. &ndash; 9:00 p.m.</td>
+              </tr>
+              <tr data-day="5">
+                <td class="day-cell">Friday</td>
+                <td class="time-cell">9:00 a.m. &ndash; 9:00 p.m.</td>
+              </tr>
+              <tr data-day="6">
+                <td class="day-cell">Saturday</td>
+                <td class="time-cell">10:00 a.m. &ndash; 5:00 p.m.</td>
+              </tr>
+              <tr data-day="0">
+                <td class="day-cell">Sunday</td>
+                <td class="time-cell">12:00 p.m. &ndash; 5:00 p.m.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. LOCATION ── -->
+    <section id="location" aria-labelledby="location-heading">
+      <div class="location-inner">
+        <header class="section-header reveal">
+          <span class="eyebrow">Find us</span>
+          <h2 class="location-h2" id="location-heading">In the heart of<br><em>Richmond Hill.</em></h2>
+        </header>
+        <div class="location-grid">
+          <div class="map-wrap reveal reveal-d1">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2875.0!2d-79.39770!3d43.85610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2b0f3f5a1a1b%3A0xabc123!2s301+High+Tech+Rd%2C+Richmond+Hill%2C+ON+L4B+4R2%2C+Canada!5e0!3m2!1sen!2sca!4v1"
+              title="Richmond Hill Walk-In Clinic location on Google Maps"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="location-details reveal reveal-d2">
+            <div class="location-block">
+              <span class="location-label">Address</span>
+              <address>
+                301 High Tech Rd, Richmond Hill, ON L4B 4R2
+                <span class="sub">Corner of Bayview Avenue &amp; Highway 7</span>
+              </address>
+            </div>
+            <div class="location-divider"></div>
+            <div class="location-block">
+              <span class="location-label">Parking &amp; Access</span>
+              <p>Ample free surface parking available on-site.<br>Accessible entrance and facilities throughout.</p>
+            </div>
+            <div class="location-divider"></div>
+            <div class="location-block">
+              <span class="location-label">Neighbourhood</span>
+              <blockquote class="location-pullquote">
+                &ldquo;We&rsquo;re proud to be part of this community &mdash; serving families across Richmond Hill, Thornhill, and Markham with the kind of care your neighbourhood deserves.&rdquo;
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 5. PHOTO STRIP ── -->
+    <div class="photo-strip" aria-hidden="true">
+      <div class="photo-cell photo-cell-left">
+        <img src="photo-stethoscope.jpg" alt="">
+      </div>
+      <div class="photo-cell photo-cell-right">
+        <img src="photo-equipment.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- ── 6. SERVICES ── -->
+    <section id="services" aria-labelledby="services-heading">
+      <div class="services-inner">
+        <div class="services-intro reveal">
+          <span class="eyebrow">What we treat</span>
+          <h2 class="services-h2" id="services-heading">Everyday care,<br><em>handled well.</em></h2>
+          <p class="services-lead">From the moment you walk in, our licensed physicians are focused on one thing: getting you the care you need, efficiently and with warmth.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-item reveal reveal-d1">
+            <h3>Cold &amp; Flu</h3>
+            <p>Respiratory illness, sore throat, ear infections, sinus, strep.</p>
+          </div>
+          <div class="service-item reveal reveal-d2">
+            <h3>Prescriptions</h3>
+            <p>New prescriptions and renewals for a wide range of conditions.</p>
+          </div>
+          <div class="service-item reveal reveal-d1">
+            <h3>Minor Injuries</h3>
+            <p>Cuts, lacerations, sprains, minor burns, bites, and wound care.</p>
+          </div>
+          <div class="service-item reveal reveal-d2">
+            <h3>Lab Requisitions</h3>
+            <p>Blood work, urinalysis, and diagnostic test orders.</p>
+          </div>
+          <div class="service-item reveal reveal-d1">
+            <h3>Preventive Care</h3>
+            <p>Annual checkups, health screenings, and blood pressure monitoring.</p>
+          </div>
+          <div class="service-item reveal reveal-d2">
+            <h3>Sick Notes &amp; Forms</h3>
+            <p>Work and school sick notes, WSIB, and insurance documentation.</p>
+          </div>
+          <div class="service-item reveal reveal-d1">
+            <h3>Pediatric Care</h3>
+            <p>Compassionate care for infants, children, and teens.</p>
+          </div>
+          <div class="service-item reveal reveal-d2">
+            <h3>Specialist Referrals</h3>
+            <p>Referrals to dermatology, orthopedics, cardiology, and beyond.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── 7. FOOTER ── -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="logo.png" alt="Richmond Hill Walk-In Clinic" class="footer-logo-img">
+        <p class="footer-tagline">Open 7 days a week. No appointment necessary. OHIP &amp; private insurance accepted.</p>
+      </div>
+      <div>
+        <span class="footer-col-label">Address</span>
+        <p class="footer-col-text">
+          301 High Tech Rd<br>
+          Richmond Hill, ON L4B 4R2<br>
+          Bayview Ave &amp; Highway 7
+        </p>
+      </div>
+      <div>
+        <span class="footer-col-label">Hours</span>
+        <p class="footer-col-text">
+          Mon &ndash; Fri &nbsp; 9:00 a.m. &ndash; 9:00 p.m.<br>
+          Saturday &nbsp; 10:00 a.m. &ndash; 5:00 p.m.<br>
+          Sunday &nbsp;&nbsp;&nbsp; 12:00 p.m. &ndash; 5:00 p.m.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="footer-year"></span> Richmond Hill Walk-In Clinic. All rights reserved.</span>
+      <span>Last patient accepted 30 min before closing</span>
+    </div>
+  </footer>
+
+  <script>
+    // ── 1. Today highlight ──
+    (function () {
+      const today = new Date().getDay();
+      const rows = document.querySelectorAll('tr[data-day]');
+      rows.forEach(function (row) {
+        if (parseInt(row.getAttribute('data-day'), 10) === today) {
+          row.classList.add('today');
+          const dayCell = row.querySelector('.day-cell');
+          if (dayCell) {
+            const badge = document.createElement('span');
+            badge.className = 'today-badge';
+            badge.textContent = 'Today';
+            dayCell.appendChild(badge);
+          }
+        }
+      });
+    })();
+
+    // ── 2. Nav scroll ──
+    (function () {
+      const header = document.getElementById('site-header');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 60) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }, { passive: true });
+    })();
+
+    // ── 3. Reveal observer ──
+    (function () {
+      if (!('IntersectionObserver' in window)) {
+        // Fallback: show all
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('visible');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+
+    // ── Footer year ──
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
