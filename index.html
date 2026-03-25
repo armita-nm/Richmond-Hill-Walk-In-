@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Richmond Hill Walk-In Clinic | No Appointment Needed | Open 7 Days</title>
-  <meta name="description" content="Richmond Hill Walk-In Clinic at 301 High Tech Rd, Bayview & Hwy 7. Open 7 days a week — no appointment needed. Serving Richmond Hill, Thornhill, and Markham.">
+  <meta name="description" content="Richmond Hill Walk-In Clinic at 301 High Tech Rd, Bayview & Hwy 7. Open 7 days a week, no appointment needed. Serving Richmond Hill, Thornhill, and Markham.">
   <meta name="keywords" content="walk-in clinic Richmond Hill, Richmond Hill doctor, no appointment clinic, urgent care Richmond Hill, Bayview Highway 7 clinic, OHIP clinic Richmond Hill">
   <meta property="og:title" content="Richmond Hill Walk-In Clinic | No Appointment Needed | Open 7 Days">
-  <meta property="og:description" content="Richmond Hill Walk-In Clinic at 301 High Tech Rd, Bayview & Hwy 7. Open 7 days a week — no appointment needed. Serving Richmond Hill, Thornhill, and Markham.">
+  <meta property="og:description" content="Richmond Hill Walk-In Clinic at 301 High Tech Rd, Bayview & Hwy 7. Open 7 days a week, no appointment needed. Serving Richmond Hill, Thornhill, and Markham.">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://richmondhillwalkin.ca">
 
@@ -142,7 +142,7 @@
     }
 
     .nav-logo {
-      height: 44px;
+      height: 56px;
       width: auto;
       display: block;
       filter: brightness(0) invert(1);
@@ -194,21 +194,32 @@
        2. HERO
     ════════════════════════════════ */
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 100vh;
-      overflow: hidden;
-    }
-
-    /* LEFT PANEL */
-    .hero-left {
-      background: var(--forest);
-      padding: clamp(100px, 12vw, 160px) clamp(40px, 6vw, 80px) clamp(80px, 10vw, 120px);
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      position: relative;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: clamp(100px,12vw,160px) clamp(32px,8%,120px);
+      background: var(--forest);
       overflow: hidden;
+      position: relative;
+    }
+
+    .hero-logo {
+      width: 280px;
+      height: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+    }
+
+    .hero-phone {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 0.08em;
+      margin-top: 12px;
     }
 
     .hero-eyebrow {
@@ -219,6 +230,7 @@
       text-transform: uppercase;
       color: var(--sage-lt);
       margin-bottom: 32px;
+      margin-top: 40px;
       opacity: 0;
       animation: riseUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
     }
@@ -255,7 +267,7 @@
       font-size: clamp(0.9rem, 1.5vw, 1.05rem);
       color: rgba(255, 255, 255, 0.6);
       line-height: 1.75;
-      max-width: 440px;
+      max-width: 520px;
       margin-bottom: 56px;
       opacity: 0;
       animation: riseUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.72s forwards;
@@ -264,7 +276,7 @@
     .scroll-indicator {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       gap: 10px;
       opacity: 0;
       animation: riseUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
@@ -304,42 +316,6 @@
       right: 0;
       transform: translateY(-50%) rotate(-35deg);
       transform-origin: right center;
-    }
-
-    /* RIGHT PANEL */
-    .hero-right {
-      background: var(--stone);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: clamp(60px, 8vw, 100px) clamp(40px, 6vw, 80px);
-      gap: 32px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-logo {
-      width: min(580px, 92%);
-      height: auto;
-      display: block;
-    }
-
-    .hero-rule {
-      width: 40px;
-      height: 1px;
-      background: rgba(44, 74, 53, 0.2);
-      flex-shrink: 0;
-    }
-
-    .hero-tagline {
-      font-family: 'Jost', sans-serif;
-      font-weight: 400;
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(44, 74, 53, 0.5);
-      text-align: center;
     }
 
     /* ════════════════════════════════
@@ -793,24 +769,31 @@
     @media (max-width: 768px) {
       /* Hero */
       .hero {
-        grid-template-columns: 1fr;
+        padding: clamp(80px, 15vw, 120px) clamp(24px, 6%, 48px);
       }
-      .hero-right {
+      .hero-logo {
+        width: min(240px, 80%);
+      }
+
+      /* Nav — hide links, keep logo */
+      nav {
         display: none;
-      }
-      .hero-left {
-        min-height: 100vh;
-        justify-content: flex-end;
       }
 
       /* Hours */
       .hours-inner {
         grid-template-columns: 1fr;
       }
+      .hours-table td {
+        font-size: 0.82rem;
+      }
 
       /* Location */
       .location-grid {
         grid-template-columns: 1fr;
+      }
+      .map-wrap iframe {
+        height: 280px;
       }
 
       /* Photo strip */
@@ -819,7 +802,7 @@
         height: auto;
       }
       .photo-cell {
-        height: 240px;
+        height: 220px;
       }
 
       /* Services */
@@ -852,15 +835,17 @@
         align-items: flex-start;
       }
 
-      /* Nav */
-      nav {
-        gap: 20px;
+      /* Touch targets */
+      footer a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
       }
     }
 
     @media (max-width: 480px) {
-      nav a {
-        font-size: 0.7rem;
+      .hero-h1 {
+        font-size: clamp(2.4rem, 8vw, 3.5rem);
       }
     }
   </style>
@@ -883,26 +868,18 @@
 
     <!-- ── 2. HERO ── -->
     <section class="hero" aria-label="Welcome">
-      <!-- Left panel -->
-      <div class="hero-left">
-        <span class="hero-eyebrow">Richmond Hill &middot; Open 7 Days</span>
-        <h1 class="hero-h1">
-          <span class="line line-1">Your neighbourhood</span>
-          <span class="line line-2">clinic, <em class="sage-italic">open</em></span>
-          <span class="line line-3 italic-only">every day.</span>
-        </h1>
-        <p class="hero-subtext">Walk in any day of the week &mdash; no appointment, no referral needed. Professional, compassionate care for every member of your family.</p>
-        <div class="scroll-indicator" aria-hidden="true">
-          <span class="scroll-label">Scroll to explore</span>
-          <div class="scroll-chevron"></div>
-        </div>
-      </div>
-
-      <!-- Right panel -->
-      <div class="hero-right" aria-hidden="true">
-        <img src="logo.png" alt="" class="hero-logo">
-        <div class="hero-rule"></div>
-        <span class="hero-tagline">Open 7 Days &middot; No Appointment Needed</span>
+      <img src="logo.png" alt="Richmond Hill Walk-In Clinic" class="hero-logo">
+      <p class="hero-phone">(905) 762-0862</p>
+      <span class="hero-eyebrow">Richmond Hill &middot; Open 7 Days</span>
+      <h1 class="hero-h1">
+        <span class="line line-1">Your neighbourhood</span>
+        <span class="line line-2">clinic, <em class="sage-italic">open</em></span>
+        <span class="line line-3 italic-only">every day.</span>
+      </h1>
+      <p class="hero-subtext">Walk in any day of the week. No appointment or referral needed. Professional, compassionate care for every member of your family.</p>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-label">Scroll to explore</span>
+        <div class="scroll-chevron"></div>
       </div>
     </section>
 
@@ -912,8 +889,7 @@
         <div class="hours-left reveal reveal-d1">
           <span class="eyebrow">Clinic hours</span>
           <h2 class="hours-h2" id="hours-heading">Open when<br><em>every day.</em></h2>
-          <p class="hours-lead">Seven days a week, including weekends. No appointment, no referral &mdash; just walk in.</p>
-          <p class="hours-note">Last patient accepted 30 minutes before closing.</p>
+          <p class="hours-lead">Seven days a week, including weekends. No appointment or referral needed. Just walk in.</p>
         </div>
         <div class="hours-right reveal reveal-d2">
           <table class="hours-table" aria-label="Clinic hours">
@@ -971,6 +947,11 @@
           </div>
           <div class="location-details reveal reveal-d2">
             <div class="location-block">
+              <span class="location-label">Phone</span>
+              <address><a href="tel:+19057620862" style="color:inherit;text-decoration:none;">(905) 762-0862</a></address>
+            </div>
+            <div class="location-divider"></div>
+            <div class="location-block">
               <span class="location-label">Address</span>
               <address>
                 301 High Tech Rd, Richmond Hill, ON L4B 4R2
@@ -986,7 +967,7 @@
             <div class="location-block">
               <span class="location-label">Neighbourhood</span>
               <blockquote class="location-pullquote">
-                &ldquo;We&rsquo;re proud to be part of this community &mdash; serving families across Richmond Hill, Thornhill, and Markham with the kind of care your neighbourhood deserves.&rdquo;
+                &ldquo;We&rsquo;re proud to be part of this community, serving families across Richmond Hill, Thornhill, and Markham with the kind of care your neighbourhood deserves.&rdquo;
               </blockquote>
             </div>
           </div>
@@ -1056,14 +1037,15 @@
     <div class="footer-grid">
       <div>
         <img src="logo.png" alt="Richmond Hill Walk-In Clinic" class="footer-logo-img">
-        <p class="footer-tagline">Open 7 days a week. No appointment necessary. OHIP &amp; private insurance accepted.</p>
+        <p class="footer-tagline">Open 7 days a week. No appointment necessary. OHIP and cash accepted.</p>
       </div>
       <div>
         <span class="footer-col-label">Address</span>
         <p class="footer-col-text">
           301 High Tech Rd<br>
           Richmond Hill, ON L4B 4R2<br>
-          Bayview Ave &amp; Highway 7
+          Bayview Ave &amp; Highway 7<br>
+          <a href="tel:+19057620862" style="color:inherit;text-decoration:none;">(905) 762-0862</a>
         </p>
       </div>
       <div>
@@ -1077,7 +1059,6 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; <span id="footer-year"></span> Richmond Hill Walk-In Clinic. All rights reserved.</span>
-      <span>Last patient accepted 30 min before closing</span>
     </div>
   </footer>
 
