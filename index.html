@@ -127,12 +127,11 @@
       z-index: 100;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       padding: 0 clamp(24px, 5vw, 60px);
       height: 72px;
       background: transparent;
       transition: background 0.45s ease, box-shadow 0.45s ease;
-      justify-content: flex-start;
     }
 
     #site-header.scrolled {
@@ -150,22 +149,34 @@
       align-items: center;
     }
 
-    .nav-name {
+    .nav-logo {
+      height: 52px;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+      transition: filter 0.5s ease;
+      flex-shrink: 0;
+    }
+
+    #site-header.scrolled .nav-logo {
+      filter: brightness(0) saturate(100%) invert(22%) sepia(30%) saturate(800%) hue-rotate(90deg) brightness(80%);
+    }
+
+    .nav-phone {
       font-family: 'Jost', sans-serif;
       font-weight: 400;
       font-size: 0.82rem;
       letter-spacing: 0.06em;
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.7);
       text-decoration: none;
       transition: color 0.4s ease;
-      margin-right: clamp(8px, 2vw, 24px);
     }
 
-    #site-header.scrolled .nav-name {
-      color: var(--forest);
+    #site-header.scrolled .nav-phone {
+      color: var(--muted);
     }
 
-    nav a:not(.nav-name) {
+    nav a:not(.nav-logo):not(.nav-phone) {
       font-family: 'Jost', sans-serif;
       font-weight: 400;
       font-size: 0.78rem;
@@ -177,7 +188,7 @@
       transition: color 0.4s ease;
     }
 
-    nav a:not(.nav-name)::after {
+    nav a:not(.nav-logo):not(.nav-phone)::after {
       content: '';
       position: absolute;
       bottom: -3px;
@@ -188,11 +199,11 @@
       transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    nav a:not(.nav-name):hover::after {
+    nav a:not(.nav-logo):not(.nav-phone):hover::after {
       width: 100%;
     }
 
-    #site-header.scrolled nav a:not(.nav-name) {
+    #site-header.scrolled nav a:not(.nav-logo):not(.nav-phone) {
       color: var(--muted);
     }
 
@@ -716,7 +727,7 @@
     }
 
     .footer-logo-img {
-      height: 32px;
+      height: 56px;
       width: auto;
       display: block;
       filter: brightness(0) invert(1);
@@ -782,8 +793,8 @@
         width: min(240px, 80%);
       }
 
-      /* Nav — hide links, keep clinic name */
-      nav a:not(.nav-name) {
+      /* Nav — hide links and phone, keep logo */
+      nav a:not(.nav-logo):not([aria-label]) {
         display: none;
       }
 
@@ -862,7 +873,10 @@
   <!-- ── 1. FIXED NAV ── -->
   <header id="site-header">
     <nav>
-      <a href="#" class="nav-name" aria-label="Richmond Hill Walk-In Clinic Home">Richmond Hill Walk-In Clinic</a>
+      <a href="#" aria-label="Richmond Hill Walk-In Clinic Home">
+        <img src="logo.png" alt="Richmond Hill Walk-In Clinic" class="nav-logo">
+      </a>
+      <a href="tel:+19057620862" class="nav-phone">(905) 762-0862</a>
       <a href="#hours">Hours</a>
       <a href="#location">Location</a>
       <a href="#services">Services</a>
