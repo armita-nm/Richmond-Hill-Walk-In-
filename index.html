@@ -60,7 +60,7 @@
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     body {
@@ -69,6 +69,7 @@
       color: var(--ink);
       background: var(--white);
       overflow-x: hidden;
+      line-height: 1.7;
     }
 
     /* ── Animations ── */
@@ -153,7 +154,7 @@
     .nav-name {
       font-family: 'Jost', sans-serif;
       font-weight: 400;
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       letter-spacing: 0.06em;
       color: rgba(255, 255, 255, 0.75);
       text-decoration: none;
@@ -168,7 +169,7 @@
     .nav-phone {
       font-family: 'Jost', sans-serif;
       font-weight: 400;
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       letter-spacing: 0.06em;
       color: rgba(255, 255, 255, 0.75);
       text-decoration: none;
@@ -182,7 +183,7 @@
     nav a:not(.nav-name):not(.nav-phone) {
       font-family: 'Jost', sans-serif;
       font-weight: 400;
-      font-size: 0.78rem;
+      font-size: 0.83rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.75);
@@ -235,7 +236,7 @@
     }
 
     .hero-logo {
-      width: 280px;
+      width: clamp(340px, 40vw, 500px);
       height: auto;
       display: block;
       filter: brightness(0) invert(1);
@@ -293,7 +294,7 @@
     .hero-subtext {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
       color: rgba(255, 255, 255, 0.6);
       line-height: 1.75;
       max-width: 520px;
@@ -395,7 +396,7 @@
     .hours-lead {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      font-size: clamp(1rem, 1.3vw, 1.1rem);
       color: rgba(255, 255, 255, 0.5);
       line-height: 1.75;
       margin-bottom: 32px;
@@ -407,9 +408,9 @@
       font-family: 'Jost', sans-serif;
       font-weight: 300;
       font-style: italic;
-      font-size: 0.83rem;
+      font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.35);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .hours-right {}
@@ -431,7 +432,7 @@
       padding: 16px 0;
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     .hours-table .day-cell {
@@ -539,13 +540,13 @@
       font-style: normal;
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--ink);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .location-block address .sub {
-      font-size: 0.83rem;
+      font-size: 0.9rem;
       color: var(--muted);
       margin-top: 4px;
       display: block;
@@ -554,7 +555,7 @@
     .location-block p {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: var(--muted);
       line-height: 1.75;
     }
@@ -656,7 +657,7 @@
     .services-lead {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      font-size: clamp(1rem, 1.3vw, 1.1rem);
       color: var(--muted);
       line-height: 1.75;
     }
@@ -714,9 +715,9 @@
     .service-item p {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 0.85rem;
+      font-size: 1rem;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     /* ════════════════════════════════
@@ -738,7 +739,7 @@
     }
 
     .footer-logo-img {
-      height: 56px;
+      height: 90px;
       width: auto;
       display: block;
       filter: brightness(0) invert(1);
@@ -749,7 +750,7 @@
     .footer-tagline {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 0.8rem;
+      font-size: 0.88rem;
       color: rgba(255, 255, 255, 0.35);
       line-height: 1.7;
       max-width: 260px;
@@ -770,7 +771,7 @@
     .footer-col-text {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 0.83rem;
+      font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.45);
       line-height: 1.9;
     }
@@ -788,7 +789,7 @@
     .footer-bottom span {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
-      font-size: 0.74rem;
+      font-size: 0.8rem;
       color: rgba(255, 255, 255, 0.2);
     }
 
@@ -801,7 +802,7 @@
         padding: clamp(80px, 15vw, 120px) clamp(24px, 6%, 48px);
       }
       .hero-logo {
-        width: min(240px, 80%);
+        width: min(340px, 85%);
       }
 
       /* Nav — hide phone and links, keep clinic name */
@@ -814,7 +815,7 @@
         grid-template-columns: 1fr;
       }
       .hours-table td {
-        font-size: 0.82rem;
+        font-size: 0.95rem;
       }
 
       /* Location */
@@ -885,7 +886,7 @@
   <header id="site-header">
     <nav>
       <a href="#" class="nav-name" aria-label="Richmond Hill Walk-In Clinic Home">Richmond Hill Walk-In Clinic</a>
-      <a href="tel:+19057620862" class="nav-phone">(905) 762-0862</a>
+      <a href="tel:+19057094274" class="nav-phone">(905) 709-4274</a>
       <a href="#hours">Hours</a>
       <a href="#location">Location</a>
       <a href="#services">Services</a>
@@ -896,8 +897,8 @@
 
     <!-- ── 2. HERO ── -->
     <section class="hero" aria-label="Welcome">
-      <img src="logo.png" alt="Richmond Hill Walk-In Clinic" class="hero-logo">
-      <a href="tel:+19057620862" class="hero-phone">(905) 762-0862</a>
+      <img src="Logo1.png" alt="Richmond Hill Walk-In Clinic" class="hero-logo">
+      <a href="tel:+19057094274" class="hero-phone">(905) 709-4274</a>
       <span class="hero-eyebrow">Richmond Hill &middot; Open 7 Days</span>
       <h1 class="hero-h1">
         <span class="line line-1">Your neighbourhood</span>
@@ -976,7 +977,7 @@
           <div class="location-details reveal reveal-d2">
             <div class="location-block">
               <span class="location-label">Phone</span>
-              <address><a href="tel:+19057620862" style="color:inherit;text-decoration:none;">(905) 762-0862</a></address>
+              <address><a href="tel:+19057094274" style="color:inherit;text-decoration:none;">(905) 709-4274</a></address>
             </div>
             <div class="location-divider"></div>
             <div class="location-block">
@@ -1064,7 +1065,7 @@
   <footer>
     <div class="footer-grid">
       <div>
-        <img src="logo.png" alt="Richmond Hill Walk-In Clinic" class="footer-logo-img">
+        <img src="Logo1.png" alt="Richmond Hill Walk-In Clinic" class="footer-logo-img">
         <p class="footer-tagline">Open 7 days a week. No appointment necessary. OHIP and cash accepted.</p>
       </div>
       <div>
@@ -1073,7 +1074,7 @@
           301 High Tech Rd<br>
           Richmond Hill, ON L4B 4R2<br>
           Bayview Ave &amp; Highway 7<br>
-          <a href="tel:+19057620862" style="color:inherit;text-decoration:none;">(905) 762-0862</a>
+          <a href="tel:+19057094274" style="color:inherit;text-decoration:none;">(905) 709-4274</a>
         </p>
       </div>
       <div>
