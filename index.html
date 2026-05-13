@@ -74,14 +74,8 @@
 
     /* ── Animations ── */
     @keyframes riseUp {
-      from {
-        opacity: 0;
-        transform: translateY(22px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes chevronFloat {
@@ -96,10 +90,7 @@
       transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
                   transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .reveal.visible { opacity: 1; transform: none; }
     .reveal-d1 { transition-delay: 0.1s; }
     .reveal-d2 { transition-delay: 0.2s; }
     .reveal-d3 { transition-delay: 0.3s; }
@@ -122,9 +113,7 @@
     ════════════════════════════════ */
     #site-header {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -161,10 +150,7 @@
       transition: color 0.4s ease;
       flex-shrink: 0;
     }
-
-    #site-header.scrolled .nav-name {
-      color: var(--forest);
-    }
+    #site-header.scrolled .nav-name { color: var(--forest); }
 
     .nav-phone {
       font-family: 'Jost', sans-serif;
@@ -175,10 +161,7 @@
       text-decoration: none;
       transition: color 0.4s ease;
     }
-
-    #site-header.scrolled .nav-phone {
-      color: var(--muted);
-    }
+    #site-header.scrolled .nav-phone { color: var(--muted); }
 
     nav a:not(.nav-name):not(.nav-phone) {
       font-family: 'Jost', sans-serif;
@@ -191,33 +174,18 @@
       position: relative;
       transition: color 0.4s ease;
     }
-
-    nav a:not(.nav-name):not(.nav-phone):hover {
-      color: rgba(255, 255, 255, 1);
-    }
-
+    nav a:not(.nav-name):not(.nav-phone):hover { color: rgba(255,255,255,1); }
     nav a:not(.nav-name):not(.nav-phone)::after {
       content: '';
       position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 0;
-      height: 1px;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
       background: currentColor;
       transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    nav a:not(.nav-name):not(.nav-phone):hover::after {
-      width: 100%;
-    }
-
-    #site-header.scrolled nav a:not(.nav-name):not(.nav-phone) {
-      color: var(--muted);
-    }
-
-    #site-header.scrolled nav a:not(.nav-name):not(.nav-phone):hover {
-      color: var(--forest);
-    }
+    nav a:not(.nav-name):not(.nav-phone):hover::after { width: 100%; }
+    #site-header.scrolled nav a:not(.nav-name):not(.nav-phone) { color: var(--muted); }
+    #site-header.scrolled nav a:not(.nav-name):not(.nav-phone):hover { color: var(--forest); }
 
     /* ════════════════════════════════
        2. HERO
@@ -282,14 +250,8 @@
     .hero-h1 .line-1 { animation-delay: 0.2s; }
     .hero-h1 .line-2 { animation-delay: 0.37s; }
     .hero-h1 .line-3 { animation-delay: 0.54s; }
-
-    .hero-h1 .sage-italic {
-      color: var(--sage-lt);
-      font-style: italic;
-    }
-    .hero-h1 .italic-only {
-      font-style: italic;
-    }
+    .hero-h1 .sage-italic { color: var(--sage-lt); font-style: italic; }
+    .hero-h1 .italic-only { font-style: italic; }
 
     .hero-subtext {
       font-family: 'Jost', sans-serif;
@@ -322,18 +284,14 @@
     }
 
     .scroll-chevron {
-      width: 18px;
-      height: 10px;
+      width: 18px; height: 10px;
       position: relative;
       animation: chevronFloat 2s ease-in-out infinite;
     }
-
-    .scroll-chevron::before,
-    .scroll-chevron::after {
+    .scroll-chevron::before, .scroll-chevron::after {
       content: '';
       position: absolute;
-      width: 10px;
-      height: 1.5px;
+      width: 10px; height: 1.5px;
       background: rgba(255, 255, 255, 0.35);
       top: 50%;
     }
@@ -349,6 +307,34 @@
     }
 
     /* ════════════════════════════════
+       HOURS ALERT BANNER
+    ════════════════════════════════ */
+    .hours-alert {
+      display: none;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 16px 24px;
+      background: rgba(122, 158, 126, 0.12);
+      border-left: 3px solid var(--sage);
+      border-radius: 0 6px 6px 0;
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: var(--sage-lt);
+      line-height: 1.6;
+    }
+
+    .hours-alert-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ════════════════════════════════
        3. HOURS
     ════════════════════════════════ */
     #hours {
@@ -361,10 +347,8 @@
     #hours::before {
       content: '';
       position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 60%;
-      height: 80%;
+      top: -20%; right: -10%;
+      width: 60%; height: 80%;
       background: radial-gradient(ellipse at center, rgba(122, 158, 126, 0.12) 0%, transparent 70%);
       pointer-events: none;
     }
@@ -378,11 +362,7 @@
       position: relative;
     }
 
-    .hours-left {}
-
-    .hours-left .eyebrow {
-      color: var(--sage-lt);
-    }
+    .hours-left .eyebrow { color: var(--sage-lt); }
 
     .hours-h2 {
       font-family: 'Cormorant Garamond', serif;
@@ -413,50 +393,37 @@
       line-height: 1.7;
     }
 
-    .hours-right {}
-
     .hours-table {
       width: 100%;
       border-collapse: collapse;
     }
-
-    .hours-table tr {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .hours-table tr:last-child {
-      border-bottom: none;
-    }
-
+    .hours-table tr { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .hours-table tr:last-child { border-bottom: none; }
     .hours-table td {
       padding: 16px 0;
       font-family: 'Jost', sans-serif;
       font-weight: 300;
       font-size: 1rem;
     }
-
     .hours-table .day-cell {
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255,255,255,0.55);
       display: flex;
       align-items: center;
       gap: 10px;
     }
-
     .hours-table .time-cell {
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255,255,255,0.75);
       text-align: right;
     }
-
     .hours-table tr.today .day-cell {
       color: var(--sage-lt);
       font-weight: 500;
       padding-left: 16px;
       border-left: 2px solid var(--sage);
     }
-
     .today-badge {
-      background: rgba(122, 158, 126, 0.2);
-      border: 1px solid rgba(122, 158, 126, 0.4);
+      background: rgba(122,158,126,0.2);
+      border: 1px solid rgba(122,158,126,0.4);
       border-radius: 100px;
       font-size: 0.62rem;
       padding: 2px 10px;
@@ -473,20 +440,9 @@
       padding: clamp(80px, 10vw, 130px) clamp(24px, 6vw, 80px);
       position: relative;
     }
-
-    .location-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      margin-bottom: clamp(48px, 7vw, 72px);
-    }
-
-    .section-header .eyebrow {
-      color: var(--sage);
-    }
-
+    .location-inner { max-width: 1200px; margin: 0 auto; }
+    .section-header { margin-bottom: clamp(48px, 7vw, 72px); }
+    .section-header .eyebrow { color: var(--sage); }
     .location-h2 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
@@ -494,37 +450,22 @@
       color: var(--ink);
       line-height: 1.1;
     }
-
     .location-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: clamp(40px, 6vw, 80px);
       align-items: start;
     }
-
     .map-wrap iframe {
-      width: 100%;
-      height: 380px;
+      width: 100%; height: 380px;
       border-radius: 20px;
       border: 1px solid var(--border);
-      box-shadow: 0 8px 48px rgba(44, 74, 53, 0.08);
+      box-shadow: 0 8px 48px rgba(44,74,53,0.08);
       display: block;
     }
-
-    .location-details {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .location-block {
-      padding: 28px 0;
-    }
-
-    .location-block:first-child {
-      padding-top: 0;
-    }
-
+    .location-details { display: flex; flex-direction: column; gap: 0; }
+    .location-block { padding: 28px 0; }
+    .location-block:first-child { padding-top: 0; }
     .location-label {
       font-family: 'Jost', sans-serif;
       font-weight: 500;
@@ -535,7 +476,6 @@
       margin-bottom: 12px;
       display: block;
     }
-
     .location-block address {
       font-style: normal;
       font-family: 'Jost', sans-serif;
@@ -544,14 +484,12 @@
       color: var(--ink);
       line-height: 1.75;
     }
-
     .location-block address .sub {
       font-size: 0.9rem;
       color: var(--muted);
       margin-top: 4px;
       display: block;
     }
-
     .location-block p {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
@@ -559,13 +497,7 @@
       color: var(--muted);
       line-height: 1.75;
     }
-
-    .location-divider {
-      width: 40px;
-      height: 1px;
-      background: var(--stone);
-    }
-
+    .location-divider { width: 40px; height: 1px; background: var(--stone); }
     .location-pullquote {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
@@ -585,42 +517,18 @@
       grid-template-columns: 1fr 1fr;
       height: 340px;
     }
-
-    .photo-cell {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .photo-cell img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .photo-cell-left img {
-      object-position: center 40%;
-      filter: brightness(0.92) saturate(0.85);
-    }
-
+    .photo-cell { position: relative; overflow: hidden; }
+    .photo-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-cell-left img { object-position: center 40%; filter: brightness(0.92) saturate(0.85); }
     .photo-cell-left::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(44, 74, 53, 0.3), transparent 60%);
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(44,74,53,0.3), transparent 60%);
       pointer-events: none;
     }
-
-    .photo-cell-right img {
-      object-position: center;
-      filter: brightness(0.88) saturate(0.8);
-    }
-
+    .photo-cell-right img { object-position: center; filter: brightness(0.88) saturate(0.8); }
     .photo-cell-right::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, transparent 40%, rgba(44, 74, 53, 0.2));
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, transparent 40%, rgba(44,74,53,0.2));
       pointer-events: none;
     }
 
@@ -631,20 +539,14 @@
       background: var(--white);
       padding: clamp(80px, 10vw, 130px) clamp(24px, 6vw, 80px);
     }
-
     .services-inner {
-      max-width: 1200px;
-      margin: 0 auto;
+      max-width: 1200px; margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: clamp(40px, 6vw, 100px);
       align-items: start;
     }
-
-    .services-intro .eyebrow {
-      color: var(--sage);
-    }
-
+    .services-intro .eyebrow { color: var(--sage); }
     .services-h2 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
@@ -653,7 +555,6 @@
       line-height: 1.1;
       margin-bottom: 24px;
     }
-
     .services-lead {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
@@ -661,32 +562,12 @@
       color: var(--muted);
       line-height: 1.75;
     }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .service-item {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .service-item:nth-child(odd) {
-      padding-right: 32px;
-      border-right: 1px solid var(--border);
-    }
-
-    .service-item:nth-child(even) {
-      padding-left: 32px;
-    }
-
-    /* remove bottom border from last two items */
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .service-item { padding: 28px 0; border-bottom: 1px solid var(--border); }
+    .service-item:nth-child(odd) { padding-right: 32px; border-right: 1px solid var(--border); }
+    .service-item:nth-child(even) { padding-left: 32px; }
     .service-item:nth-last-child(1),
-    .service-item:nth-last-child(2) {
-      border-bottom: none;
-    }
-
+    .service-item:nth-last-child(2) { border-bottom: none; }
     .service-item h3 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
@@ -696,22 +577,14 @@
       position: relative;
       display: inline-block;
     }
-
     .service-item h3::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
+      content: ''; position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
       background: var(--sage);
       transition: width 0.45s ease;
     }
-
-    .service-item:hover h3::after {
-      width: 100%;
-    }
-
+    .service-item:hover h3::after { width: 100%; }
     .service-item p {
       font-family: 'Jost', sans-serif;
       font-weight: 300;
@@ -727,156 +600,76 @@
       background: var(--forest-d);
       padding: clamp(60px, 8vw, 100px) clamp(24px, 6vw, 80px) 0;
     }
-
     .footer-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: clamp(40px, 5vw, 80px);
-      max-width: 1200px;
-      margin: 0 auto;
+      max-width: 1200px; margin: 0 auto;
       padding-bottom: clamp(48px, 6vw, 80px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-
     .footer-logo-img {
-      height: 90px;
-      width: auto;
-      display: block;
+      height: 90px; width: auto; display: block;
       filter: brightness(0) invert(1);
-      opacity: 0.8;
-      margin-bottom: 16px;
+      opacity: 0.8; margin-bottom: 16px;
     }
-
     .footer-tagline {
       font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.88rem;
-      color: rgba(255, 255, 255, 0.35);
-      line-height: 1.7;
-      max-width: 260px;
+      font-weight: 300; font-size: 0.88rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7; max-width: 260px;
     }
-
     .footer-col-label {
       font-family: 'Jost', sans-serif;
-      font-weight: 500;
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--sage-lt);
-      opacity: 0.7;
-      display: block;
-      margin-bottom: 16px;
+      font-weight: 500; font-size: 0.68rem;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--sage-lt); opacity: 0.7;
+      display: block; margin-bottom: 16px;
     }
-
     .footer-col-text {
       font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.45);
+      font-weight: 300; font-size: 0.9rem;
+      color: rgba(255,255,255,0.45);
       line-height: 1.9;
     }
-
     .footer-bottom {
-      max-width: 1200px;
-      margin: 0 auto;
+      max-width: 1200px; margin: 0 auto;
       padding: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 16px;
     }
-
     .footer-bottom span {
       font-family: 'Jost', sans-serif;
-      font-weight: 300;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.2);
+      font-weight: 300; font-size: 0.8rem;
+      color: rgba(255,255,255,0.2);
     }
 
     /* ════════════════════════════════
        RESPONSIVE
     ════════════════════════════════ */
     @media (max-width: 768px) {
-      /* Hero */
-      .hero {
-        padding: clamp(80px, 15vw, 120px) clamp(24px, 6%, 48px);
-      }
-      .hero-logo {
-        width: min(340px, 85%);
-      }
-
-      /* Nav — hide phone and links, keep clinic name */
-      nav a:not(.nav-name) {
-        display: none;
-      }
-
-      /* Hours */
-      .hours-inner {
-        grid-template-columns: 1fr;
-      }
-      .hours-table td {
-        font-size: 0.95rem;
-      }
-
-      /* Location */
-      .location-grid {
-        grid-template-columns: 1fr;
-      }
-      .map-wrap iframe {
-        height: 280px;
-      }
-
-      /* Photo strip */
-      .photo-strip {
-        grid-template-columns: 1fr;
-        height: auto;
-      }
-      .photo-cell {
-        height: 220px;
-      }
-
-      /* Services */
-      .services-inner {
-        grid-template-columns: 1fr;
-      }
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-      .service-item:nth-child(odd) {
-        padding-right: 0;
-        border-right: none;
-      }
-      .service-item:nth-child(even) {
-        padding-left: 0;
-      }
-      .service-item:nth-last-child(2) {
-        border-bottom: 1px solid var(--border);
-      }
-      .service-item:last-child {
-        border-bottom: none;
-      }
-
-      /* Footer */
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      /* Touch targets */
-      footer a {
-        min-height: 44px;
-        display: inline-flex;
-        align-items: center;
-      }
+      .hero { padding: clamp(80px, 15vw, 120px) clamp(24px, 6%, 48px); }
+      .hero-logo { width: min(340px, 85%); }
+      nav a:not(.nav-name) { display: none; }
+      .hours-inner { grid-template-columns: 1fr; }
+      .hours-table td { font-size: 0.95rem; }
+      .location-grid { grid-template-columns: 1fr; }
+      .map-wrap iframe { height: 280px; }
+      .photo-strip { grid-template-columns: 1fr; height: auto; }
+      .photo-cell { height: 220px; }
+      .services-inner { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-item:nth-child(odd) { padding-right: 0; border-right: none; }
+      .service-item:nth-child(even) { padding-left: 0; }
+      .service-item:nth-last-child(2) { border-bottom: 1px solid var(--border); }
+      .service-item:last-child { border-bottom: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      footer a { min-height: 44px; display: inline-flex; align-items: center; }
     }
 
     @media (max-width: 480px) {
-      .hero-h1 {
-        font-size: clamp(2.4rem, 8vw, 3.5rem);
-      }
+      .hero-h1 { font-size: clamp(2.4rem, 8vw, 3.5rem); }
     }
   </style>
 </head>
@@ -914,6 +707,10 @@
 
     <!-- ── 3. HOURS ── -->
     <section id="hours" aria-labelledby="hours-heading">
+      <div id="hours-alert" class="hours-alert" role="alert">
+        <span class="hours-alert-label">Today&#8217;s notice</span>
+        <span id="hours-alert-text"></span>
+      </div>
       <div class="hours-inner">
         <div class="hours-left reveal reveal-d1">
           <span class="eyebrow">Clinic hours</span>
@@ -969,9 +766,7 @@
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2875.0!2d-79.39770!3d43.85610!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2b0f3f5a1a1b%3A0xabc123!2s301+High+Tech+Rd%2C+Richmond+Hill%2C+ON+L4B+4R2%2C+Canada!5e0!3m2!1sen!2sca!4v1"
               title="Richmond Hill Walk-In Clinic location on Google Maps"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
           <div class="location-details reveal reveal-d2">
@@ -1079,7 +874,7 @@
       </div>
       <div>
         <span class="footer-col-label">Hours</span>
-        <p class="footer-col-text">
+        <p class="footer-col-text" id="footer-hours-text">
           Mon &ndash; Fri &nbsp; 9:00 a.m. &ndash; 9:00 p.m.<br>
           Saturday &nbsp; 10:00 a.m. &ndash; 5:00 p.m.<br>
           Sunday &nbsp;&nbsp;&nbsp; 12:00 p.m. &ndash; 5:00 p.m.
@@ -1095,8 +890,7 @@
     // ── 1. Today highlight ──
     (function () {
       const today = new Date().getDay();
-      const rows = document.querySelectorAll('tr[data-day]');
-      rows.forEach(function (row) {
+      document.querySelectorAll('tr[data-day]').forEach(function (row) {
         if (parseInt(row.getAttribute('data-day'), 10) === today) {
           row.classList.add('today');
           const dayCell = row.querySelector('.day-cell');
@@ -1114,43 +908,96 @@
     (function () {
       const header = document.getElementById('site-header');
       window.addEventListener('scroll', function () {
-        if (window.scrollY > 60) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
+        header.classList.toggle('scrolled', window.scrollY > 60);
       }, { passive: true });
     })();
 
     // ── 3. Reveal observer ──
     (function () {
       if (!('IntersectionObserver' in window)) {
-        // Fallback: show all
-        document.querySelectorAll('.reveal').forEach(function (el) {
-          el.classList.add('visible');
-        });
+        document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('visible'); });
         return;
       }
-
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
         });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
-      });
-
-      document.querySelectorAll('.reveal').forEach(function (el) {
-        observer.observe(el);
-      });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
     })();
 
     // ── Footer year ──
     document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // ── 4. Live hours from Google Sheet ──
+    (function () {
+      var SHEET_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR6837E3sGc24WrQBtpXxbsmpA39-S1M0HMyzdkjG0gd-nWun7RLAh3hpKfAKCfNkXiFeraxY5g2t1B/pub?output=csv';
+
+      var DAY_INDEX = {
+        'monday': 1, 'tuesday': 2, 'wednesday': 3,
+        'thursday': 4, 'friday': 5, 'saturday': 6, 'sunday': 0
+      };
+
+      function parseCSV(text) {
+        var lines = text.trim().split('\n');
+        var headers = lines[0].split(',').map(function(h){ return h.trim(); });
+        return lines.slice(1).map(function(line) {
+          var values = [], cur = '', inQ = false;
+          for (var i = 0; i < line.length; i++) {
+            var ch = line[i];
+            if (ch === '"') { inQ = !inQ; }
+            else if (ch === ',' && !inQ) { values.push(cur.trim()); cur = ''; }
+            else { cur += ch; }
+          }
+          values.push(cur.trim());
+          var obj = {};
+          headers.forEach(function(h, i){ obj[h] = (values[i] || '').trim(); });
+          return obj;
+        });
+      }
+
+      fetch(SHEET_CSV)
+        .then(function(r){ return r.text(); })
+        .then(function(text) {
+          var rows = parseCSV(text);
+          var today = new Date().getDay();
+
+          rows.forEach(function(row) {
+            var dayIdx = DAY_INDEX[(row['Day'] || '').toLowerCase()];
+            if (dayIdx === undefined) return;
+
+            // Update hours table
+            var tr = document.querySelector('tr[data-day="' + dayIdx + '"]');
+            if (tr && row['Open'] && row['Close']) {
+              var timeCell = tr.querySelector('.time-cell');
+              if (timeCell) timeCell.textContent = row['Open'] + ' \u2013 ' + row['Close'];
+            }
+
+            // Show note banner for today
+            if (dayIdx === today && row['Note']) {
+              var banner = document.getElementById('hours-alert');
+              var bannerText = document.getElementById('hours-alert-text');
+              if (banner && bannerText) {
+                bannerText.textContent = row['Note'];
+                banner.style.display = 'block';
+              }
+            }
+          });
+
+          // Update footer hours
+          var mon = rows.find(function(r){ return (r['Day']||'').toLowerCase() === 'monday'; });
+          var sat = rows.find(function(r){ return (r['Day']||'').toLowerCase() === 'saturday'; });
+          var sun = rows.find(function(r){ return (r['Day']||'').toLowerCase() === 'sunday'; });
+          var footerEl = document.getElementById('footer-hours-text');
+          if (footerEl && mon && sat && sun) {
+            footerEl.innerHTML =
+              'Mon \u2013 Fri &nbsp; ' + mon['Open'] + ' \u2013 ' + mon['Close'] + '<br>' +
+              'Saturday &nbsp; ' + sat['Open'] + ' \u2013 ' + sat['Close'] + '<br>' +
+              'Sunday &nbsp;&nbsp;&nbsp; ' + sun['Open'] + ' \u2013 ' + sun['Close'];
+          }
+        })
+        .catch(function() { /* silently fall back to hardcoded hours */ });
+    })();
   </script>
 
 </body>
