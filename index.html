@@ -307,32 +307,6 @@
     }
 
     /* ════════════════════════════════
-       HOURS ALERT BANNER
-    ════════════════════════════════ */
-    .hours-alert {
-      display: none;
-      max-width: 1200px;
-      margin: 0 auto 40px;
-      padding: 16px 24px;
-      background: rgba(122, 158, 126, 0.12);
-      border-left: 3px solid var(--sage);
-      border-radius: 0 6px 6px 0;
-      font-family: 'Jost', sans-serif;
-      font-weight: 400;
-      font-size: 0.95rem;
-      color: var(--sage-lt);
-      line-height: 1.6;
-    }
-
-    .hours-alert-label {
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--sage);
-      display: block;
-      margin-bottom: 4px;
-    }
 
     /* ════════════════════════════════
        3. HOURS
@@ -707,10 +681,6 @@
 
     <!-- ── 3. HOURS ── -->
     <section id="hours" aria-labelledby="hours-heading">
-      <div id="hours-alert" class="hours-alert" role="alert">
-        <span class="hours-alert-label">Today&#8217;s notice</span>
-        <span id="hours-alert-text"></span>
-      </div>
       <div class="hours-inner">
         <div class="hours-left reveal reveal-d1">
           <span class="eyebrow">Clinic hours</span>
@@ -967,25 +937,22 @@
             var dayIdx = DAY_INDEX[(row['Day'] || '').toLowerCase()];
             if (dayIdx === undefined) return;
 
-            // Update hours table
+            // If Closed_Today checkbox is TRUE, show Closed for that day
+            var isClosed = (row['Closed_Today'] || '').toUpperCase() === 'TRUE';
             var tr = document.querySelector('tr[data-day="' + dayIdx + '"]');
-            if (tr && row['Open'] && row['Close']) {
+            if (tr) {
               var timeCell = tr.querySelector('.time-cell');
-              if (timeCell) timeCell.textContent = row['Open'] + ' \u2013 ' + row['Close'];
-            }
-
-            // Show note banner for today
-            if (dayIdx === today && row['Note']) {
-              var banner = document.getElementById('hours-alert');
-              var bannerText = document.getElementById('hours-alert-text');
-              if (banner && bannerText) {
-                bannerText.textContent = row['Note'];
-                banner.style.display = 'block';
+              if (timeCell) {
+                if (isClosed) {
+                  timeCell.textContent = 'Closed';
+                } else if (row['Open'] && row['Close']) {
+                  timeCell.textContent = row['Open'] + ' \u2013 ' + row['Close'];
+                }
               }
             }
           });
 
-          // Update footer hours
+          // Update footer hours (always uses regular Open/Close)
           var mon = rows.find(function(r){ return (r['Day']||'').toLowerCase() === 'monday'; });
           var sat = rows.find(function(r){ return (r['Day']||'').toLowerCase() === 'saturday'; });
           var sun = rows.find(function(r){ return (r['Day']||'').toLowerCase() === 'sunday'; });
