@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/contact-us",
+      "destination": "/#location",
+      "permanent": true
+    }
+  ]
+}
